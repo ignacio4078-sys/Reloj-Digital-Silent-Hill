@@ -1,0 +1,97 @@
+/* ===== Fondo Silent Hill ===== */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    /* Fondo oscuro + tu imagen */
+    background-color: #080808;
+    background-image: url('https://alfabetajuega.com/hero/2025/07/500_333.1753799960.0871.jpeg?width=768&aspect_ratio=16:9&format=nowebp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Oscuro pero visible */
+    filter: brightness(0.80) contrast(1.15) saturate(0.6);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Courier New', monospace;
+    color: #e3dfd5;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== Capa de niebla suave ===== */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    /* Niebla basada en degradado */
+    background: radial-gradient(
+        circle at 50% 50%, 
+        rgba(255,255,255,0.06),
+        rgba(0,0,0,0.85)
+    );
+
+    opacity: 0.25; /* visibilidad de la neblina */
+    pointer-events: none;
+
+    animation: fogMove 24s linear infinite;
+}
+
+/* ===== Fecha ===== */
+#fecha {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+
+    text-shadow: 
+        0 0 4px rgba(0,0,0,0.9),
+        0 0 8px rgba(0,0,0,0.7);
+}
+
+/* ===== Hora ===== */
+#hora {
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    color: #e8e3d7;
+
+    text-shadow:
+        0 0 5px rgba(0,0,0,1),
+        0 0 15px rgba(0,0,0,0.8);
+
+    /* parpadeo estilo tele vieja */
+    animation: flicker 4s infinite alternate ease-in-out;
+}
+
+/* ===== Segundos oxidados ===== */
+.segundos {
+    color: #7a2828;
+    text-shadow:
+        0 0 6px rgba(30,0,0,1),
+        0 0 12px rgba(40,0,0,0.8);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fogMove {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-220px); }
+}
+
+@keyframes flicker {
+    0%   { opacity: 1; }
+    96%  { opacity: 1; }
+    97%  { opacity: 0.8; }
+    98%  { opacity: 1; }
+    99%  { opacity: 0.9; }
+    100% { opacity: 0.95; }
+}
