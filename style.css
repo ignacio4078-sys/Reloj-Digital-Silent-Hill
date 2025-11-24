@@ -6,7 +6,7 @@ body {
 
     /* Fondo oscuro + tu imagen */
     background-color: #080808;
-    background-image: url('https://alfabetajuega.com/hero/2025/07/500_333.1753799960.0871.jpeg?width=768&aspect_ratio=16:9&format=nowebp');
+    background-image: url('img/500_333.1753799960.0871.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
